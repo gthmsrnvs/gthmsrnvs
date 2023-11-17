@@ -22,6 +22,40 @@ body {
   background-color: #ededed;
 }
 
+#about {
+  background-color: #f4f4f4; /* Light grey background for minimalism */
+  color: #333; /* Dark text for contrast and readability */
+  padding: 20px;
+  border-radius: 10px; /* Slightly rounded corners for a modern touch */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 800px; /* Optimal width for readability */
+  margin: 40px auto; /* Centering the section */
+  font-family: 'Arial', sans-serif; /* Sleek, modern font */
+}
+
+#about h2 {
+  color: #007bff; /* Bright blue for a pop of futuristic color */
+  margin-bottom: 15px; /* Space under the heading */
+  font-size: 2rem; /* Larger font size for the heading */
+}
+
+#about p {
+  font-size: 1rem; /* Standard font size for readability */
+  line-height: 1.6; /* Spacing for better readability */
+  margin-bottom: 15px; /* Space between paragraphs */
+}
+
+#about a {
+  color: #007bff; /* Matching the heading color for consistency */
+  text-decoration: none; /* No underlines for a cleaner look */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#about a:hover {
+  color: #0056b3; /* Darker blue for hover effect */
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
 /* Welcome Landing Screen */
 #welcome-landing {
   display: flex;

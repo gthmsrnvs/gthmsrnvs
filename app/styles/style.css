@@ -1,96 +1,256 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/* Reset default margin and padding */
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Use a simple, modern font */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #d7d7d7;
+  padding-bottom: 50px; /* Add space for the footer */
 }
 
+/* Container for all content */
 #app {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+  background-color: #ededed;
+}
+
+/* Welcome Landing Screen */
+#welcome-landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.welcome-content {
+  position: relative;
+  z-index: 1; /* This ensures the content is above the canvas */
+  animation: fadeIn 2s ease-in-out;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
-.card {
-  padding: 2em;
+.welcome-content h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.read-the-docs {
-  color: #888;
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.welcome-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-button {
+.welcome-button:hover {
+  background-color: #f4f4f4;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#welcome-landing::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('path-to-futuristic-background.jpg') no-repeat center center / cover;
+  z-index: -1;
+  opacity: 0.7;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+/* About Section styles */
+#about {
+  margin-bottom: 40px;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Projects Section styles */
+#projects {
+  margin-bottom: 40px;
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Grid setup for project items */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Base styles for project items */
+.project-item {
+  background: #fff;
+  padding: 20px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: box-shadow 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.project-item .project-logo {
+  max-width: 80%;  /* Adjust max-width as needed */
+  max-height: 100px; /* Adjust max-height as needed */
+  display: block;  /* Makes it a block-level element */
+  margin: 0 auto;  /* Centers the logo horizontally */
+  object-fit: contain; /* Keeps the aspect ratio */
+}
+
+/* Video styling inside project items */
+.project-item video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire area of the card */
+  opacity: 0; /* Start with the video hidden */
+  transition: opacity 0.5s ease; /* Transition for smooth fade in/out */
+  z-index: -1; /* Start behind the content */
+}
+
+/* Content inside the project card */
+.project-item-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover state for project item to reveal the video */
+.project-item:hover video {
+  opacity: 1;
+}
+
+/* Contact Section Styles */
+#contact {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+}
+
+.contact-icons a {
+  color: #333; /* Icon color */
+  font-size: 2rem; /* Icon size */
+}
+
+.contact-icons a:hover {
+  color: #007bff; /* Icon hover color */
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
   }
-  a:hover {
-    color: #747bff;
+
+  nav {
+    flex-direction: column;
   }
-  button {
-    background-color: #f9f9f9;
+
+  nav a {
+    margin: 5px 0; /* Add space between nav items on smaller screens */
+  }
+
+  #projects h2,
+  #contact h2 {
+    font-size: 1.75rem;
+  }
+  .contact-icons a {
+    font-size: 1.5rem; /* Smaller icon size on smaller screens */
   }
 }

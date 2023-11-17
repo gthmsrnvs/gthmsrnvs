@@ -21,7 +21,7 @@ const sketch = (p5) => {
     for (let star of stars) {
       if (p5.dist(p5.mouseX, p5.mouseY, star.x, star.y) < 50) {
         p5.fill(p5.random(100, 255), p5.random(100, 255), p5.random(100, 255));
-        drawStar(star.x, star.y, star.size * 10, star.size, 5);
+        drawStar(star.x, star.y, star.size * 5, star.size, 5);
       } else {
         p5.fill(255);
         drawStar(star.x, star.y, star.size, star.size / 2, 5);

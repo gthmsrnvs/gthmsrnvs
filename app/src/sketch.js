@@ -16,7 +16,7 @@ const sketch = (p5) => {
   };
 
   p5.draw = () => {
-    p5.background(0, 20);
+    p5.background(255);
 
     for (let star of stars) {
       if (p5.dist(p5.mouseX, p5.mouseY, star.x, star.y) < 50) {

@@ -1,17 +1,16 @@
-/* Reset default margin and padding */
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Use a simple, modern font */
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #d7d7d7;
-  padding-bottom: 50px; /* Add space for the footer */
+  padding-bottom: 50px; /* Space for the footer */
 }
 
 /* Container for all content */
@@ -22,48 +21,13 @@ body {
   background-color: #ededed;
 }
 
-#about {
-  background-color: #f4f4f4; /* Light grey background for minimalism */
-  color: #333; /* Dark text for contrast and readability */
-  padding: 20px;
-  border-radius: 10px; /* Slightly rounded corners for a modern touch */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  max-width: 800px; /* Optimal width for readability */
-  margin: 40px auto; /* Centering the section */
-  font-family: 'Arial', sans-serif; /* Sleek, modern font */
-}
-
-#about h2 {
-  color: #007bff; /* Bright blue for a pop of futuristic color */
-  margin-bottom: 15px; /* Space under the heading */
-  font-size: 2rem; /* Larger font size for the heading */
-}
-
-#about p {
-  font-size: 1rem; /* Standard font size for readability */
-  line-height: 1.6; /* Spacing for better readability */
-  margin-bottom: 15px; /* Space between paragraphs */
-}
-
-#about a {
-  color: #007bff; /* Matching the heading color for consistency */
-  text-decoration: none; /* No underlines for a cleaner look */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#about a:hover {
-  color: #0056b3; /* Darker blue for hover effect */
-  text-decoration: underline; /* Underline on hover for clarity */
-}
-
-/* Welcome Landing Screen */
+/* Welcome Landing Screen Styles */
 #welcome-landing {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -71,24 +35,13 @@ body {
 
 .welcome-content {
   position: relative;
-  z-index: 1; /* This ensures the content is above the canvas */
+  z-index: 1; /* Above the canvas */
   animation: fadeIn 2s ease-in-out;
   transform: translateY(-50px);
   opacity: 0;
   animation-fill-mode: forwards;
 }
 
-.welcome-content h1 {
-  font-size: 3em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-@keyframes fadeIn {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .welcome-button {
   display: inline-block;
   padding: 10px 20px;
@@ -107,25 +60,33 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-#welcome-landing::after {
-  content: '';
+/* Business Card Styles */
+.business-card-container {
+  perspective: 1000px; /* Depth for flip effect */
+  width: 1050px;
+  height: 600px;
+  margin: 20px auto;
+}
+
+.business-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s; /* Flip speed */
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-front, .card-back {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('path-to-futuristic-background.jpg') no-repeat center center / cover;
-  z-index: -1;
-  opacity: 0.7;
-  animation: moveBackground 20s linear infinite;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide back of front panel */
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-@keyframes moveBackground {
-  0% { background-position: 0 0; }
-  100% { background-position: 100% 100%; }
-}
-
-/* Header styles */
+/* Header and Navigation Styles */
 header {
   text-align: center;
   padding: 20px 0;
@@ -136,7 +97,6 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* Navigation styles */
 nav {
   display: flex;
   justify-content: center;
@@ -154,34 +114,58 @@ nav a:hover {
   color: #007bff;
 }
 
-/* About Section styles */
+/* About Section Styles */
 #about {
-  margin-bottom: 40px;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
 }
 
 #about h2 {
+  color: #007bff;
+  margin-bottom: 15px;
   font-size: 2rem;
-  margin-bottom: 10px;
 }
 
-/* Projects Section styles */
-#projects {
-  margin-bottom: 40px;
+#about p, #about a {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-#projects h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+#about a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
-/* Grid setup for project items */
+.about-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.profile-photo img {
+  border-radius: 50%; /* Circular image */
+  max-width: 150px;
+  border: 3px solid #333;
+  margin-left: 20px;
+}
+
+/* Projects Section Styles */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-/* Base styles for project items */
 .project-item {
   background: #fff;
   padding: 20px;
@@ -193,68 +177,17 @@ nav a:hover {
   position: relative;
   overflow: hidden;
   border: 1px solid transparent;
-  transition: box-shadow 0.3s ease;
 }
 
 .project-item .project-logo {
-  max-width: 80%;  /* Adjust max-width as needed */
-  max-height: 100px; /* Adjust max-height as needed */
-  display: block;  /* Makes it a block-level element */
-  margin: 0 auto;  /* Centers the logo horizontally */
-  object-fit: contain; /* Keeps the aspect ratio */
+  max-width: 80%;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
-/* Video styling inside project items */
-.project-item video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover the entire area of the card */
-  opacity: 0; /* Start with the video hidden */
-  transition: opacity 0.5s ease; /* Transition for smooth fade in/out */
-  z-index: -1; /* Start behind the content */
-}
-
-/* Content inside the project card */
-.project-item-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Hover state for project item to reveal the video */
-.project-item:hover video {
-  opacity: 1;
-}
-
-/* Contact Section Styles */
-#contact {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between icons */
-}
-
-.contact-icons a {
-  color: #333; /* Icon color */
-  font-size: 2rem; /* Icon size */
-}
-
-.contact-icons a:hover {
-  color: #007bff; /* Icon hover color */
-}
-
-/* Footer styles */
+/* Footer Styles */
 footer {
   text-align: center;
   position: fixed;
@@ -277,14 +210,22 @@ footer {
   }
 
   nav a {
-    margin: 5px 0; /* Add space between nav items on smaller screens */
+    margin: 5px 0;
   }
 
-  #projects h2,
-  #contact h2 {
-    font-size: 1.75rem;
+  .project-item {
+    grid-template-columns: 1fr;
   }
+
   .contact-icons a {
-    font-size: 1.5rem; /* Smaller icon size on smaller screens */
+    font-size: 1.5rem;
+  }
+}
+
+/* Additional Animation Styles */
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

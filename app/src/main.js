@@ -41,26 +41,46 @@ function onCardMouseOut(event) {
 function onCardMouseEnter(event) {
   const card = event.currentTarget;
   const video = card.querySelector('video');
-  video.play();
-  gsap.to(video, {
-    duration: 0.5,
-    opacity: 1,
-    zIndex: 1, // Ensure the video is above other content
-  });
+  if (video) {
+    video.play();
+    gsap.to(video, {
+      duration: 0.5,
+      opacity: 1,
+      zIndex: 1, // Ensure the video is above other content
+    });
+  }
 }
 
 // Function to pause the video on mouse leave and hide it
 function onCardMouseLeave(event) {
   const card = event.currentTarget;
   const video = card.querySelector('video');
-  video.pause();
-  video.currentTime = 0; // Optional: Reset the video to start
-  gsap.to(video, {
-    duration: 0.5,
-    opacity: 0,
-    zIndex: -1, // Reset the stacking order
+  if (video) {
+    video.pause();
+    video.currentTime = 0; // Optional: Reset the video to start
+    gsap.to(video, {
+      duration: 0.5,
+      opacity: 0,
+      zIndex: -1, // Reset the stacking order
+    });
+  }
+}
+
+function flipCard() {
+  const card = document.querySelector('.business-card');
+  // Toggle the 'flipped' class on each click
+  card.classList.toggle('flipped');
+
+  // Determine the rotation based on whether the card is flipped
+  const rotationY = card.classList.contains('flipped') ? 180 : 0;
+
+  gsap.to(card, {
+    rotationY: rotationY,
+    ease: 'power1.out',
+    duration: 0.8
   });
 }
+
 
 // Add the event listeners to each project card
 document.querySelectorAll('.project-item').forEach((card) => {
@@ -69,3 +89,11 @@ document.querySelectorAll('.project-item').forEach((card) => {
   card.addEventListener('mouseenter', onCardMouseEnter);
   card.addEventListener('mouseleave', onCardMouseLeave);
 });
+
+// Add the event listeners to the business card
+const businessCard = document.querySelector('.business-card');
+if (businessCard) {
+  businessCard.addEventListener('mousemove', onCardMouseMove);
+  businessCard.addEventListener('mouseleave', onCardMouseOut);
+};
+

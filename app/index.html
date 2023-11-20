@@ -1,104 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gautham Srinivas - UI/UX Designer</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js"></script>
-</head>
-<body>
-  <!-- Welcome Landing Screen -->
-  <section id="welcome-landing">
-    <div class="welcome-content">
-      <img src="/profile.jpg" alt="Gautham Srinivas" class="profile-photo">
-      <h1>Gautham Srinivas</h1>
-      <p>UI/UX Designer + Front-End Developer</p>
-      <a href="#about" class="welcome-button">Explore My Work</a>
-    </div>
-  </section>
-
-  <div id="app">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! I'm Gautham, a UX Designer & Front-End Developer, and an alum of <a href="https://www.sydney.edu.au/" target="_blank">University of Sydney</a> and <a href="https://www.unsw.edu.au/" target="_blank">UNSW</a>. I specialize in creating intuitive, user-centric designs, leveraging my deep understanding of the double diamond design process and design thinking strategies.</p><br>
-      
-      <p>My toolkit includes advanced proficiency in Figma, Adobe XD, Creative Cloud Suite and CAD for 3D modeling. I'm also adept with front-end technologies like React, and familiar with programming in SQL, Java, JavaScript, C++, HTML, CSS, and Python. I can use AI tools like Perplexity, Dall-E 3 and the latest OpenAI APIs in my design. This diverse skill set allows me to approach design challenges from multiple angles.</p><br>
-      
-      <p>In my work, I apply user personas and UX research methodologies to gain insightful user behavior patterns. My expertise in heuristic evaluations and usability testing ensures each design is data-driven and user-focused, enhancing the overall user experience.</p><br>
-    
-      <p>I aim to create digital solutions that are not only aesthetically engaging but also functionally superior, aligning with the latest trends in UI/UX design. If you're looking for a designer who can blend innovative design with cutting-edge technology, let's connect and collaborate!</p><br>
-    </section>    
-    
-        
-    <section id="studio-projects">
-      <h2>UX Case Studies</h2>
-      <div class="project-grid">
-        <!-- Add your studio projects here -->
-        <a href="heatscape.html" class="project-item">
-          <img src="/heatscape.png" alt="HeatScape Logo" class="project-logo">
-          <h3>WebProduct Design</h3>
-          <p>Using thermal sensors and AI to mitigate the effects of rising temperatures for SDG 11.b</p>
-        </a>
-        <a href="fieldwork.html" class="project-item">
-          <img src="/ncp.png" alt="New Colombo Plan Scholarship Logo" class="project-logo">
-          <h3>New Colombo Plan Mobility Scholarship</h3>
-          <p>Designed a web app 'in the wild' for an informal settlement in Indonesia. Developed and deployed the MVP in one day in a foreign language.</p>
-        </a>
-        <a href="cityguard.html" class="project-item">
-          <img src="/cityguard.png" alt="CityGuard Logo" class="project-logo">
-          <h3>Interaction Design</h3>
-          <p>Enhancing personal safety through crowdsourcing and community-driven design. Features multimodal and omni-channel interactions.</p>
-        </a>
-        <a href="dataviz.html" class="project-item">
-          <img src="/microplastics.png" alt="Data Visualization Studio Logo" class="project-logo">
-          <h3>Interactive Data Visualisation</h3>
-          <p>Visualising the impact of microplastics in global fish populations and public health. Received a mark of 100% for this project in my final year of university.</p>
-        </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gautham Srinivas - UI/UX Designer</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js"></script>
+  </head>
+  <body>
+    <!-- Welcome Landing Screen -->
+    <section id="welcome-landing">
+      <div class="welcome-content">
+        <!-- Business Card Container with Flip Effect -->
+        <div class="business-card-container" onclick="flipCard()">
+          <div class="business-card">
+            <!-- Front of the Card -->
+            <div class="card-front">
+              <img src="business_card.png" alt="Business Card Front" />
+            </div>
+          </div>
+        </div>
+        <a href="#about" class="welcome-button">Explore My Work</a>
       </div>
     </section>
 
-    <section id="independent-projects">
-      <h2>Start-Up Projects</h2>
-      <div class="project-grid">
-        <!-- Add your independent projects here -->
-        <a href="foodpile.html" class="project-item">
-          <img src="/foodpile.png" alt="Foodpile Logo" class="project-logo">
-          <h3>Foodpile for AIESEC YLX Pitch Competition</h3>
-          <p>Save time, money and effort by taking stock of your pantry and using AI to optimise spending through automated bulk buying. Won a national pitch competition and was offered funding for this design.</p>
+    <div id="app">
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+          <!-- Added container for layout -->
+          <div class="about-text">
+            I am a <a href="https://rp-handbooks.sydney.edu.au/handbooks/archive/2021/architecture/undergraduate/b_design_computing.shtml.html" target="_blank">Design Computing</a> graduate with a passion for creating
+            stylish, intuitive, and user-friendly digital interfaces and
+            experiences. My expertise includes rapid UX Design and deployment of applications
+            in challenging environments like Indonesian slums, showcasing my
+            versatility and problem-solving capabilities. <br> <br> Additionally, I have
+            successfully led my startup venture, 'Foodpile', to win a national
+            pitch competition and secure funding, reflecting my entrepreneurial
+            skills. Fluent in Figma, Adobe Creative Cloud, HTML, CSS, and
+            JavaScript, I am eager to apply my design skills in the fields
+            of data, cloud services, blockchain, AI, and Web3 infrastructure,
+            aiming to contribute to innovative and impactful tech solutions.
+          </div>
+          <div class="profile-photo">
+            <img src="profile.png" alt="Gautham Srinivas" />
+            <!-- Added profile photo -->
+          </div>
+        </div>
+      </section>
+
+      <section id="studio-projects">
+        <h2>UX Case Studies</h2>
+        <div class="project-grid">
+          <!-- Add your studio projects here -->
+          <a href="heatscape.html" class="project-item">
+            <img
+              src="/heatscape.png"
+              alt="HeatScape Logo"
+              class="project-logo"
+            />
+            <h3>Product Design</h3>
+            <p>
+              Using thermal sensors and AI to mitigate the effects of rising
+              temperatures for SDG 11.b
+            </p>
+          </a>
+          <a href="fieldwork.html" class="project-item">
+            <img
+              src="/ncp.png"
+              alt="New Colombo Plan Scholarship Logo"
+              class="project-logo"
+            />
+            <h3>New Colombo Plan Mobility Scholarship</h3>
+            <p>
+              Designed a web app 'in the wild' for an informal settlement in
+              Indonesia. Developed and deployed the MVP in one day in a foreign
+              language.
+            </p>
+          </a>
+          <a href="cityguard.html" class="project-item">
+            <img
+              src="/cityguard.png"
+              alt="CityGuard Logo"
+              class="project-logo"
+            />
+            <h3>Interaction Design</h3>
+            <p>
+              Enhancing personal safety through crowdsourcing and
+              community-driven design. Features multimodal and omni-channel
+              interactions.
+            </p>
+          </a>
+          <a href="dataviz.html" class="project-item">
+            <img
+              src="/microplastics.png"
+              alt="Data Visualization Studio Logo"
+              class="project-logo"
+            />
+            <h3>Interactive Data Visualisation</h3>
+            <p>
+              Visualising the impact of microplastics in global fish populations
+              and public health. Received a mark of 100% for this project in my
+              final year of university.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <section id="independent-projects">
+        <h2>Start-Up Projects</h2>
+        <div class="project-grid">
+          <!-- Add your independent projects here -->
+          <a href="foodpile.html" class="project-item">
+            <img src="/foodpile.png" alt="Foodpile Logo" class="project-logo" />
+            <h3>Foodpile for AIESEC YLX Pitch Competition</h3>
+            <p>
+              Save time, money and effort by taking stock of your pantry and
+              using AI to optimise spending through automated bulk buying. Won a
+              national pitch competition and was offered funding for this
+              design.
+            </p>
+          </a>
+          <a href="hamletpeople.html" class="project-item">
+            <img src="/hpl.png" alt="Digital Art Logo" class="project-logo" />
+            <h3>HAMLETPEOPLE - Clothing Brand</h3>
+            <p>
+              Designed and printed t-shirts which I sold through Instagram and
+              in person. Sold 50+ digital artworks for musicians in Sydney's
+              vibrant hip hop scene.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <div class="contact-icons">
+        <!-- LinkedIn Icon -->
+        <a
+          href="https://www.linkedin.com/in/gautham-srinivas"
+          target="_blank"
+          title="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
         </a>
-        <a href="hamletpeople.html" class="project-item">
-          <img src="/hpl.png" alt="Digital Art Logo" class="project-logo">
-          <h3>HAMLETPEOPLE - Clothing Brand</h3>
-          <p>Designed and printed t-shirts which I sold through Instagram and in person. Sold 50+ digital artworks for musicians in Sydney's vibrant hip hop scene.</p>
+
+        <!-- Gmail Icon (Font Awesome doesn't have a Gmail icon, so using envelope) -->
+        <a href="mailto:gautham.srinivas@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        <!-- X FKA Twitter Icon -->
+        <a
+          href="https://twitter.com/yourprofile"
+          target="_blank"
+          title="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
         </a>
       </div>
-    </section>
-    
-    <div class="contact-icons">
-      <!-- LinkedIn Icon -->
-      <a href="https://www.linkedin.com/in/gautham-srinivas" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    
-      <!-- Gmail Icon (Font Awesome doesn't have a Gmail icon, so using envelope) -->
-      <a href="mailto:gautham.srinivas@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    
-      <!-- X FKA Twitter Icon -->
-      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
     </div>
-  </div>
-  
-  <footer>
-    <p>&copy; 2023 Gautham Srinivas. All rights reserved.</p>
-  </footer>
-  
-  <script type="module" src="src/main.js"></script>
-  <script type="module" src="src/sketch.js"></script>
-</body>
+
+    <footer>
+      <p>&copy; 2023 Gautham Srinivas. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/sketch.js"></script>
+  </body>
 </html>

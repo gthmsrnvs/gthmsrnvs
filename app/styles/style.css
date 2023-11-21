@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #d7d7d7;
@@ -61,29 +61,13 @@ body {
 }
 
 /* Business Card Styles */
-.business-card-container {
-  perspective: 1000px; /* Depth for flip effect */
-  width: 1050px;
-  height: 600px;
-  margin: 20px auto;
-}
-
 .business-card {
   width: 100%;
-  height: 100%;
+  height: auto; /* Adjust height automatically */
   transform-style: preserve-3d;
   transition: transform 0.8s; /* Flip speed */
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Hide back of front panel */
-  border-radius: 8px;
-  overflow: hidden;
 }
 
 /* Header and Navigation Styles */
@@ -123,7 +107,8 @@ nav a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: 40px auto;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
+  word-wrap: break-word;
 }
 
 #about h2 {
@@ -132,7 +117,8 @@ nav a:hover {
   font-size: 2rem;
 }
 
-#about p, #about a {
+#about p,
+#about a {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 15px;
@@ -154,8 +140,8 @@ nav a:hover {
 
 .profile-photo img {
   border-radius: 50%; /* Circular image */
-  max-width: 150px;
-  border: 3px solid #333;
+  max-width: 20em;
+  border: 5px solid #ffffff;
   margin-left: 20px;
 }
 
@@ -187,6 +173,44 @@ nav a:hover {
   object-fit: contain;
 }
 
+/* Modal Styles for Project Details */
+.project-details {
+  background-color: white;
+  color: #333;
+  position: fixed; /* Modal position */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left of the viewport */
+  width: 100%; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: auto; /* Scrollable content */
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100; /* Ensure it's above other content */
+  display: none; /* Hidden by default */
+}
+
+/* Close Button for Modal */
+.project-details .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 101; /* Ensure it's above the modal content */
+}
+
+/* Dark Background Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+  z-index: 50; /* Below the modal, above other content */
+  display: none; /* Hidden by default */
+}
+
 /* Footer Styles */
 footer {
   text-align: center;
@@ -199,8 +223,35 @@ footer {
   padding: 10px 0;
 }
 
+.contact-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  gap: 20px; /* Space between icons */
+  margin-top: 20px; /* Space above the icons */
+}
+
+.contact-icons a {
+  color: #333; /* Icon color */
+  font-size: 2rem; /* Icon size */
+  transition: color 0.3s; /* Smooth color transition for hover effect */
+}
+
+.contact-icons a:hover {
+  color: #007bff; /* Icon hover color */
+}
+
 /* Responsive Design */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {  
+  .business-card {
+    max-width: 90%; /* Smaller width for smaller screens */
+  }
+
+  /* Adjust images in business card */
+  .business-card img {
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
   header h1 {
     font-size: 2rem;
   }
@@ -217,8 +268,18 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .project-details {
+    width: 90%;
+    height: 90vh;
+  }
+  /* Styles specific for p5.js canvas */
+  .p5Canvas {
+    max-width: 100%; /* Ensure canvas does not exceed the width of the screen */
+    height: auto; /* Maintain aspect ratio of the canvas */
+  }
+
   .contact-icons a {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Smaller icon size on smaller screens */
   }
 }
 

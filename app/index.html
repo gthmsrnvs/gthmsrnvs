@@ -15,15 +15,12 @@
     <!-- Welcome Landing Screen -->
     <section id="welcome-landing">
       <div class="welcome-content">
-        <!-- Business Card Container with Flip Effect -->
-        <div class="business-card-container" onclick="flipCard()">
           <div class="business-card">
             <!-- Front of the Card -->
             <div class="card-front">
               <img src="business_card.png" alt="Business Card Front" />
             </div>
           </div>
-        </div>
         <a href="#about" class="welcome-button">Explore My Work</a>
       </div>
     </section>
@@ -34,30 +31,43 @@
         <div class="about-container">
           <!-- Added container for layout -->
           <div class="about-text">
-            I am a <a href="https://rp-handbooks.sydney.edu.au/handbooks/archive/2021/architecture/undergraduate/b_design_computing.shtml.html" target="_blank">Design Computing</a> graduate with a passion for creating
-            stylish, intuitive, and user-friendly digital interfaces and
-            experiences. My expertise includes rapid UX Design and deployment of applications
-            in challenging environments like Indonesian slums, showcasing my
-            versatility and problem-solving capabilities. <br> <br> Additionally, I have
-            successfully led my startup venture, 'Foodpile', to win a national
-            pitch competition and secure funding, reflecting my entrepreneurial
-            skills. Fluent in Figma, Adobe Creative Cloud, HTML, CSS, and
-            JavaScript, I am eager to apply my design skills in the fields
-            of data, cloud services, blockchain, AI, and Web3 infrastructure,
-            aiming to contribute to innovative and impactful tech solutions.
+            I am a Bachelor of
+            <a
+              href="https://rp-handbooks.sydney.edu.au/handbooks/archive/2021/architecture/undergraduate/b_design_computing.shtml.html"
+              target="_blank"
+              >Design Computing</a
+            >
+            graduate with a passion for creating stylish, intuitive, and
+            user-friendly digital interfaces and experiences. My expertise
+            includes rapid UX Design and deployment of applications in
+            challenging environments like informal settlements in Indonesia or national level pitch competitions at start-up incubators, showcasing my
+            ability to work in fast-paced and high pressure environments. <br />
+            <br />
+            Additionally, I have successfully led my startup venture,
+            'Foodpile', to win a national pitch competition and secure funding,
+            reflecting my entrepreneurial spirit. Fluent in Figma, Adobe
+            Creative Cloud, HTML, CSS, and JavaScript, I am eager to apply my
+            design skills in the fields of data, cloud services, blockchain, AI,
+            and Web3 infrastructure, aiming to contribute towards innovative and
+            impactful design in technology.
           </div>
           <div class="profile-photo">
-            <img src="profile.png" alt="Gautham Srinivas" />
+            <img src="profile.jpg" alt="Gautham Srinivas" />
             <!-- Added profile photo -->
           </div>
         </div>
       </section>
 
+      <!-- Studio Projects Section -->
       <section id="studio-projects">
         <h2>UX Case Studies</h2>
         <div class="project-grid">
-          <!-- Add your studio projects here -->
-          <a href="heatscape.html" class="project-item">
+          <!-- Project Cards -->
+          <div
+            id="heatscape"
+            class="project-item"
+            onclick="showProjectDetails('heatscape-details')"
+          >
             <img
               src="/heatscape.png"
               alt="HeatScape Logo"
@@ -68,8 +78,12 @@
               Using thermal sensors and AI to mitigate the effects of rising
               temperatures for SDG 11.b
             </p>
-          </a>
-          <a href="fieldwork.html" class="project-item">
+          </div>
+          <div
+            id="fieldwork"
+            class="project-item"
+            onclick="showProjectDetails('fieldwork-details')"
+          >
             <img
               src="/ncp.png"
               alt="New Colombo Plan Scholarship Logo"
@@ -81,8 +95,12 @@
               Indonesia. Developed and deployed the MVP in one day in a foreign
               language.
             </p>
-          </a>
-          <a href="cityguard.html" class="project-item">
+          </div>
+          <div
+            id="cityguard"
+            class="project-item"
+            onclick="showProjectDetails('cityguard-details')"
+          >
             <img
               src="/cityguard.png"
               alt="CityGuard Logo"
@@ -94,8 +112,12 @@
               community-driven design. Features multimodal and omni-channel
               interactions.
             </p>
-          </a>
-          <a href="dataviz.html" class="project-item">
+          </div>
+          <div
+            id="dataviz"
+            class="project-item"
+            onclick="showProjectDetails('dataviz-details')"
+          >
             <img
               src="/microplastics.png"
               alt="Data Visualization Studio Logo"
@@ -107,34 +129,105 @@
               and public health. Received a mark of 100% for this project in my
               final year of university.
             </p>
-          </a>
-        </div>
-      </section>
-
-      <section id="independent-projects">
-        <h2>Start-Up Projects</h2>
-        <div class="project-grid">
-          <!-- Add your independent projects here -->
-          <a href="foodpile.html" class="project-item">
+          </div>
+          <!-- Foodpile Card -->
+          <div
+            id="foodpile"
+            class="project-item"
+            onclick="showProjectDetails('foodpile-details')"
+          >
             <img src="/foodpile.png" alt="Foodpile Logo" class="project-logo" />
             <h3>Foodpile for AIESEC YLX Pitch Competition</h3>
             <p>
-              Save time, money and effort by taking stock of your pantry and
-              using AI to optimise spending through automated bulk buying. Won a
-              national pitch competition and was offered funding for this
-              design.
+              AI-driven pantry management for optimized bulk buying, winning a
+              national pitch competition.
             </p>
-          </a>
-          <a href="hamletpeople.html" class="project-item">
-            <img src="/hpl.png" alt="Digital Art Logo" class="project-logo" />
-            <h3>HAMLETPEOPLE - Clothing Brand</h3>
-            <p>
-              Designed and printed t-shirts which I sold through Instagram and
-              in person. Sold 50+ digital artworks for musicians in Sydney's
-              vibrant hip hop scene.
-            </p>
-          </a>
+          </div>
         </div>
+      </section>
+
+      <!-- Heatscape Details -->
+      <section
+        id="heatscape-details"
+        class="project-details"
+        style="display: none"
+      >
+        <span class="close-btn">&times;</span>
+        <h2>Heatscape - Thermal Sensor AI</h2>
+        <p>Role: Lead UX Designer | Tools: Figma, Adobe XD, Python</p>
+        <p>
+          Heatscape uses AI and thermal sensors to address climate change
+          impacts. My role involved user research, interface design, and
+          prototyping.
+        </p>
+        <!-- Additional content and images -->
+      </section>
+
+      <!-- Fieldwork Details -->
+      <section
+        id="fieldwork-details"
+        class="project-details"
+        style="display: none"
+      >
+        <span class="close-btn">&times;</span>
+        <h2>Fieldwork - Mobility Scholarship</h2>
+        <p>Role: UX Researcher | Tools: Sketch, InVision</p>
+        <p>
+          Fieldwork focuses on developing a web app for informal settlements. I
+          conducted field research and designed a user-centric MVP in one day.
+        </p>
+        <!-- Additional content and images -->
+      </section>
+
+      <!-- CityGuard Details -->
+      <section
+        id="cityguard-details"
+        class="project-details"
+        style="display: none"
+      >
+        <span class="close-btn">&times;</span>
+        <h2>CityGuard - Community Safety</h2>
+        <p>Role: Interaction Designer | Tools: Adobe XD, React</p>
+        <p>
+          CityGuard enhances personal safety through a community-driven
+          platform. I was responsible for creating interactive designs and
+          integrating feedback.
+        </p>
+        <!-- Additional content and images -->
+      </section>
+
+      <!-- Data Visualization Details -->
+      <section
+        id="dataviz-details"
+        class="project-details"
+        style="display: none"
+      >
+        <span class="close-btn">&times;</span>
+        <h2>Data Visualization - Microplastics Impact</h2>
+        <p>Role: Data Visualizer | Tools: D3.js, Adobe Illustrator</p>
+        <p>
+          This project visualizes the effect of microplastics on fish
+          populations. It involved extensive data analysis and creative visual
+          storytelling.
+        </p>
+        <!-- Additional content and images -->
+      </section>
+
+      <!-- Foodpile Details -->
+      <section
+        id="foodpile-details"
+        class="project-details"
+        style="display: none"
+      >
+        <span class="close-btn">&times;</span>
+        <h2>Foodpile - AI Pantry Management</h2>
+        <p>Role: Full-Stack Designer | Tools: React, Node.js, Figma</p>
+        <p>
+          Foodpile, an AI-driven app, optimizes pantry management and bulk
+          buying. I led the design and development, focusing on usability and AI
+          integration.
+        </p>
+        <!-- Additional content and images -->
       </section>
 
       <div class="contact-icons">
@@ -164,7 +257,9 @@
     </div>
 
     <footer>
-      <p>&copy; 2023 Gautham Srinivas. All rights reserved.</p>
+      <p>
+        Coded from scratch, deployed for free. &copy; 2023 Gautham Srinivas.
+      </p>
     </footer>
 
     <script type="module" src="src/main.js"></script>

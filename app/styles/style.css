@@ -183,7 +183,7 @@ nav a:hover {
   position: fixed; /* Modal position */
   top: 0; /* Align to the top of the viewport */
   left: 0; /* Align to the left of the viewport */
-  width: 100%; /* Full width of the viewport */
+  width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
   overflow-y: auto; /* Scrollable content */
   padding: 20px;
@@ -328,8 +328,8 @@ footer {
   }
 
   .project-details {
-    width: 90%;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
   }
 
   /* Styles specific for p5.js canvas */

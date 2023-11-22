@@ -66,9 +66,17 @@ document.querySelectorAll('.close-btn').forEach(button => {
     button.addEventListener('click', closeAllModals);
 });
 
-// Business card interaction (if applicable)
+// Business card interaction
 const businessCard = document.querySelector('.business-card');
 if (businessCard) {
     businessCard.addEventListener('mousemove', onCardMouseMove);
     businessCard.addEventListener('mouseleave', onCardMouseOut);
 }
+
+document.querySelectorAll('.project-item').forEach(item => {
+    const video = item.querySelector('.prototype-video');
+    if(video) {
+        item.addEventListener('mouseenter', () => video.play());
+        item.addEventListener('mouseleave', () => video.pause());
+    }
+});

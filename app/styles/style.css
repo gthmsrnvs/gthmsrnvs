@@ -11,6 +11,7 @@ body {
   color: #333;
   background-color: #d7d7d7;
   padding-bottom: 50px; /* Space for the footer */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Container for all content */
@@ -46,8 +47,8 @@ body {
   display: inline-block;
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: #fff;
-  color: #333;
+  background-color: #181818;
+  color: #ffffff;
   border-radius: 30px;
   text-decoration: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -55,7 +56,7 @@ body {
 }
 
 .welcome-button:hover {
-  background-color: #f4f4f4;
+  background-color: #343434;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
@@ -65,7 +66,6 @@ body {
   width: 100%;
   height: auto; /* Adjust height automatically */
   transform-style: preserve-3d;
-  transition: transform 0.8s; /* Flip speed */
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -100,7 +100,7 @@ nav a:hover {
 
 /* About Section Styles */
 #about {
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   color: #333;
   padding: 20px;
   border-radius: 10px;
@@ -112,7 +112,7 @@ nav a:hover {
 }
 
 #about h2 {
-  color: #007bff;
+  color: #000000;
   margin-bottom: 15px;
   font-size: 2rem;
 }
@@ -141,14 +141,17 @@ nav a:hover {
 .profile-photo img {
   border-radius: 50%; /* Circular image */
   max-width: 20em;
-  border: 5px solid #ffffff;
+  border: 5px solid rgb(179, 176, 176);
   margin-left: 20px;
 }
 
 /* Projects Section Styles */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Adjust number of columns as needed */
   gap: 20px;
 }
 
@@ -211,6 +214,24 @@ nav a:hover {
   display: none; /* Hidden by default */
 }
 
+/* Custom sizing for different items */
+#heatscape {
+  grid-column: span 2; /* This project will span two columns */
+}
+
+#fieldwork {
+  grid-row: span 2; /* This project will span two rows */
+}
+
+#cityguard {
+  grid-row: span 2;
+}
+
+#dataviz,
+#foodpile {
+  grid-column: span 1; /* These projects will take one column each */
+}
+
 /* Footer Styles */
 footer {
   text-align: center;
@@ -241,15 +262,33 @@ footer {
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 600px) {  
+@media only screen and (max-width: 600px) {
+  #app {
+    width: 100%; /* Ensure the main container fits the screen width */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .welcome-content, .about-container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+  }
+
+  .profile-photo img {
+    max-width: 100px; /* Adjust profile photo size for smaller screens */
+  }
+
   .business-card {
     max-width: 90%; /* Smaller width for smaller screens */
+    margin: 0 auto; /* Center the business card */
+    display: block; /* Ensure it's treated as a block-level element */
   }
 
   /* Adjust images in business card */
   .business-card img {
     max-width: 100%; /* Ensure image does not exceed container width */
     height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image within the business card */
+    margin: 0 auto; /* Center align image */
   }
 
   header h1 {
@@ -265,21 +304,51 @@ footer {
   }
 
   .project-item {
-    grid-template-columns: 1fr;
+    position: relative;
+    grid-column: span 1; /* Each project takes one column on smaller screens */
+  }
+
+  .prototype-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 8px; /* Match the card's border radius */
+  }
+
+  .project-item:hover .prototype-video {
+    display: block;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
   }
 
   .project-details {
     width: 90%;
     height: 90vh;
   }
+
   /* Styles specific for p5.js canvas */
   .p5Canvas {
     max-width: 100%; /* Ensure canvas does not exceed the width of the screen */
     height: auto; /* Maintain aspect ratio of the canvas */
   }
 
+  .close-btn {
+    top: 5px;
+    right: 5px; /* Adjust position of close button in modal */
+  }
+
+  footer {
+    position: relative; /* Adjust footer position */
+  }
+
   .contact-icons a {
-    font-size: 1.5rem; /* Smaller icon size on smaller screens */
+    font-size: 1.2rem; /* Smaller icon size on smaller screens */
   }
 }
 

@@ -140,9 +140,10 @@ nav a:hover {
 
 .profile-photo img {
   border-radius: 50%; /* Circular image */
-  max-width: 20em;
+  max-width: 15em;
   border: 5px solid rgb(179, 176, 176);
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* Projects Section Styles */
@@ -225,6 +226,43 @@ nav a:hover {
 
 #cityguard {
   grid-row: span 2;
+}
+
+/* CityGuard Project Specific Styles */
+#cityguard-details {
+  background-color: #f7f7f7; /* Light background for readability */
+}
+
+#cityguard-details h2 {
+  color: #0056b3; /* Distinctive heading color for CityGuard section */
+  margin-bottom: 20px;
+}
+
+#cityguard-details p {
+  color: #333; /* Darker text for contrast */
+  margin-bottom: 15px;
+}
+
+#cityguard-details img {
+  width: 100%; /* Full width images within the section */
+  margin-bottom: 20px;
+  border-radius: 5px; /* Slightly rounded corners for images */
+}
+
+/* Styles for the Figma Prototype Embed */
+.figma-embed {
+  width: 100%; /* Full width for responsiveness */
+  height: 500px; /* Fixed height for the embedded prototype */
+  border: none; /* Remove default border */
+  margin-bottom: 20px; /* Space below the embed */
+}
+
+/* Enhancing the visibility of the decision matrix and iteration images */
+#cityguard-decision-matrix,
+#cityguard-prototyping,
+#cityguard-prototyping-iterations,
+#cityguard-figma-prototype {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 #dataviz,

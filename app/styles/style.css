@@ -193,6 +193,30 @@ nav a:hover {
   display: none; /* Hidden by default */
 }
 
+/* Styles for images in project details to ensure they are centered and responsive */
+.project-details img {
+  display: block; /* Ensures the image is a block element */
+  max-width: 50vw; /* Maximum width is half of the viewport width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 20px auto; /* Center the image with automatic margins */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+/* Styles for the image-row container using grid */
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+  gap: 20px; /* Space between grid items */
+  justify-items: center; /* Center items along the inline (row) axis */
+  align-items: start; /* Align items to the start of the block (column) axis */
+}
+
+/* Styles for images within the image-row */
+.half-width-image {
+  width: 100%; /* Each image will fill its grid column */
+  height: auto; /* Maintain aspect ratio */
+}
+
 /* Close Button for Modal */
 .project-details .close-btn {
   position: absolute;
@@ -201,18 +225,6 @@ nav a:hover {
   font-size: 24px;
   cursor: pointer;
   z-index: 101; /* Ensure it's above the modal content */
-}
-
-/* Dark Background Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
-  z-index: 50; /* Below the modal, above other content */
-  display: none; /* Hidden by default */
 }
 
 /* Custom sizing for different items */
@@ -344,6 +356,10 @@ footer {
   .project-item {
     position: relative;
     grid-column: span 1; /* Each project takes one column on smaller screens */
+  }
+
+  .project-details img {
+    max-width: 90%; /* Images take up more screen space on smaller devices */
   }
 
   .prototype-video {

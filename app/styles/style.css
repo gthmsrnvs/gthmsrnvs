@@ -134,8 +134,53 @@ nav a:hover {
 
 .about-container {
   display: flex;
+  flex-direction: column;
   align-items: start;
   justify-content: space-between;
+}
+
+/* Skills Section Heading */
+.skills-heading {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 20px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill i {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+/* Skill Bars Styling */
+.skill-bar {
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  margin-left: 10px;
+  width: 200px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  width: 100%; /* Initial width, set inline for each bar */
+  height: 20px;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: width 1s ease-in-out;
 }
 
 .profile-photo img {
@@ -236,6 +281,15 @@ nav a:hover {
   z-index: 101; /* Ensure it's above the modal content */
 }
 
+/* Custom styles for images in the Fieldwork project details */
+#fieldwork-details.project-details img {
+  width: 80%; /* Double the width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block;
+  margin: 20px auto; /* Center the image */
+  max-width: none !important; /* Override max-width settings */
+}
+
 /* Custom sizing for different items */
 #heatscape {
   grid-column: span 2; /* This project will span two columns */
@@ -246,7 +300,7 @@ nav a:hover {
 }
 
 #cityguard {
-  grid-row: span 2;
+  grid-row: span 1;
 }
 
 /* CityGuard Project Specific Styles */
@@ -412,6 +466,12 @@ footer {
 
   .contact-icons a {
     font-size: 1.2rem; /* Smaller icon size on smaller screens */
+  }
+  
+  .skill-bar,
+  .skill-progress {
+    width: 90%; /* Slightly reduce width on smaller screens */
+    margin: 10px auto; /* Centering the bars */
   }
 }
 

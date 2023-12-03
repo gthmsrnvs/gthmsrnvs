@@ -164,25 +164,6 @@ nav a:hover {
   color: #007bff;
 }
 
-/* Skill Bars Styling */
-.skill-bar {
-  background-color: #e0e0e0;
-  border-radius: 20px;
-  margin-left: 10px;
-  width: 200px;
-  height: 20px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-  width: 100%; /* Initial width, set inline for each bar */
-  height: 20px;
-  overflow: hidden;
-  border-radius: 20px;
-  transition: width 1s ease-in-out;
-}
-
 .profile-photo img {
   border-radius: 50%; /* Circular image */
   max-width: 15em;
@@ -247,10 +228,64 @@ nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
 }
 
+.project_details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ededed;
+}
+
+.footer-8 {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.icon {
+  font-size: 24px;
+  color: #4CAF50;
+  margin-right: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle_black {
+  font-weight: bold;
+  color: #333;
+}
+
+.body_new.left_align.large_spacing {
+  color: #555;
+}
+
+.button-3.subtitle_white.w-button {
+  background-color: #2862dd;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button-3.subtitle_white.w-button:hover {
+  background-color: #003cc7;
+}
+
+
 /* Styles for the image-row container with two images */
 .image-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* Creates two columns of equal width */
   gap: 20px; /* Space between grid items */
   justify-items: center; /* Center items along the inline (row) axis */
   align-items: start; /* Align items to the start of the block (column) axis */
@@ -259,14 +294,18 @@ nav a:hover {
 /* Styles for the image-row container with three images */
 .image-row.three-images {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal width */
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Creates three columns of equal width */
   gap: 20px; /* Space between grid items */
   justify-items: center; /* Center items along the inline (row) axis */
   align-items: start; /* Align items to the start of the block (column) axis */
 }
 
 /* Styles for images within the image-row */
-.half-width-image, .third-width-image {
+.half-width-image,
+.third-width-image {
   width: 100%; /* Each image will fill its grid column */
   height: auto; /* Maintain aspect ratio */
 }
@@ -381,7 +420,8 @@ footer {
     padding: 10px; /* Adjust padding for smaller screens */
   }
 
-  .welcome-content, .about-container {
+  .welcome-content,
+  .about-container {
     flex-direction: column; /* Stack elements vertically on smaller screens */
     align-items: center;
   }
@@ -467,7 +507,7 @@ footer {
   .contact-icons a {
     font-size: 1.2rem; /* Smaller icon size on smaller screens */
   }
-  
+
   .skill-bar,
   .skill-progress {
     width: 90%; /* Slightly reduce width on smaller screens */

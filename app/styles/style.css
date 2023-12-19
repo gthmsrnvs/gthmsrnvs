@@ -102,26 +102,50 @@ nav a:hover {
 #about {
   background-color: #ffffff;
   color: #333;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 1000px;
   margin: 40px auto;
-  font-family: "Arial", sans-serif;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
   word-wrap: break-word;
 }
 
+#about .about-text{
+  padding: 0 20px; /* Padding on left and right */
+  margin-bottom: 30px; /* Bottom margin */
+  line-height: 1.8;
+  text-align: center; /* Centered text */
+}
+
 #about h2 {
-  color: #000000;
-  margin-bottom: 15px;
-  font-size: 2rem;
+  font-size: 2.5rem; /* Larger font size */
+  font-weight: 700; /* Bolder font */
+  color: #333;
+  margin-bottom: 30px; /* Increased bottom margin */
+}
+
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #94c0ef; /* Blue background */
+  color: #ffffff; /* White text color */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.resume-button:hover {
+  background-color: rgb(0, 61, 126); /* Blue background */
 }
 
 #about p,
 #about a {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
   color: #007bff;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -135,39 +159,34 @@ nav a:hover {
 .about-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
 }
 
-/* Skills Section Heading */
 .skills-heading {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #333;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Skills Section */
-.skills-section {
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .skill {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
 }
 
 .skill i {
-  margin-right: 8px;
+  margin-right: 10px;
   color: #007bff;
 }
 
 .profile-photo img {
   border-radius: 50%; /* Circular image */
-  max-width: 15em;
-  border: 5px solid rgb(179, 176, 176);
+  width: 250px; /* Adjusted width */
+  height: 250px; /* Adjusted height */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
   margin-left: 20px;
   margin-right: 20px;
 }
